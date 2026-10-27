@@ -1,0 +1,9 @@
+Contexte et objectif :
+
+Les prédicteurs de la bactériémie restent mal caractérisés, alors qu’un diagnostic rapide à partir d’analyses biologiques de routine pourrait accélérer la prise en charge des patients suspects d’infection. L’objectif de ce travail est de développer et valider un modèle prédisant la survenue d’une bactériémie à partir de données biologiques de routine.
+
+Méthodes: Nous avons utilisé les données de 11 753 patients suspectés de bactériémie (Hôpital général de Vienne, 2006-2010), comprenant 51 prédicteurs biologiques potentiels et une prévalence de positifs de 8 %. Des variables cliniques dérivées (rapport neutrophiles/lymphocytes, plaquettes/lymphocytes, produit leucocytes×CRP, urée/créatinine) ont été ajoutées aux données brutes. Un ensemble de quatre modèles (deux gradient boosting, une forêt aléatoire, une régression logistique) a été combiné par un méta-modèle pondéré, le seuil de décision étant calibré par validation croisée stratifiée à 5 plis pour maximiser le F1-score, en limitant la fuite de données entre entraînement et évaluation.
+
+Résultats: Le modèle atteint une aire sous la courbe ROC de 0,79 et un F1-score de 0,36 (précision ≈ 0,32, rappel ≈ 0,41) pour un seuil optimal de 0,18, surpassant chacun des modèles pris individuellement. Une validation plus stricte, isolant la calibration du méta-modèle des données d’évaluation, donne une estimation plus prudente du F1 autour de 0,35.
+
+Conclusion:Ces résultats suggèrent qu’une combinaison de modèles simples, enrichis de variables cliniques dérivées, peut aider à prioriser les patients pour l’hémoculture, mais une validation sur un jeu de données externe, non encore disponible au moment du rendu, reste nécessaire avant toute conclusion sur la supériorité réelle de l’approche.
